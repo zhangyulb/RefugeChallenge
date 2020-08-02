@@ -1,0 +1,129 @@
+AUTO_RESUME: true
+CUDNN:
+  BENCHMARK: true
+  DETERMINISTIC: false
+  ENABLED: true
+DATA_DIR: ''
+GPUS: (0,)
+OUTPUT_DIR: 'output'
+LOG_DIR: 'log'
+WORKERS: 4
+PRINT_FREQ: 20
+
+DATASET:
+  DATASET: refuge 
+  FLIP: true 
+  ROOT: '../data/'
+  ROT_FACTOR: 15.
+  SCALE_FACTOR: 0.2
+  SHIFT_FACTOR: 0.1
+  TEST_SET: test 
+  TRAIN_SET: train+val
+  TRAIN_FOLD: 0
+MODEL:
+  INIT_WEIGHTS: true
+  NAME: fovea_net 
+  PRETRAINED: 'models/pretrained/hrnet_w32-36af842e.pth'
+  TARGET_TYPE: gaussian
+  IMAGE_SIZE:
+  - 1634 
+  - 1634 
+  CROP_SIZE:
+  - 1536
+  - 1536
+  PATCH_SIZE:
+  - 1024
+  - 1024
+  DS_FACTOR: 4
+  SIGMA: 2
+  MAX_DS_OFFSET: 8
+  MAX_OFFSET: 8
+  REGION_RADIUS: 128
+  EXTRA:
+    PRETRAINED_LAYERS:
+    - 'conv1'
+    - 'bn1'
+    - 'conv2'
+    - 'bn2'
+    - 'layer1'
+    - 'transition1'
+    - 'stage2'
+    - 'transition2'
+    - 'stage3'
+    - 'transition3'
+    - 'stage4'
+    FINAL_CONV_KERNEL: 1
+    STAGE2:
+      NUM_MODULES: 1
+      NUM_BRANCHES: 2
+      BLOCK: BASIC
+      NUM_BLOCKS:
+      - 4
+      - 4
+      NUM_CHANNELS:
+      - 32
+      - 64
+      FUSE_METHOD: SUM
+    STAGE3:
+      NUM_MODULES: 4
+      NUM_BRANCHES: 3
+      BLOCK: BASIC
+      NUM_BLOCKS:
+      - 4
+      - 4
+      - 4
+      NUM_CHANNELS:
+      - 32
+      - 64
+      - 128
+      FUSE_METHOD: SUM
+    STAGE4:
+      NUM_MODULES: 3
+      NUM_BRANCHES: 4
+      BLOCK: BASIC
+      NUM_BLOCKS:
+      - 4
+      - 4
+      - 4
+      - 4
+      NUM_CHANNELS:
+      - 32
+      - 64
+      - 128
+      - 256
+      FUSE_METHOD: SUM
+LOSS:
+  USE_TARGET_WEIGHT: true
+  ROI_WEIGHT: 1.0
+  REGRESS_WEIGHT: 0.001
+TRAIN:
+  BATCH_SIZE_PER_GPU: 4
+  SHUFFLE: true 
+  BEGIN_EPOCH: 0
+  END_EPOCH: 300
+  OPTIMIZER: adam
+  LR: 0.001
+  LR_FACTOR: 0.1
+  LR_STEP:
+  - 170
+  - 200
+  WD: 0.0001
+  GAMMA1: 0.99
+  GAMMA2: 0.0
+  MOMENTUM: 0.9
+  NESTEROV: false
+TEST:
+  BATCH_SIZE_PER_GPU: 1
+  FLIP_TEST: true 
+  MODEL_FILE: ''
+DEBUG:
+  DEBUG: true
+  SAVE_HEATMAP_DS_GT: true
+  SAVE_HEATMAP_DS_PRED: true
+  SAVE_HEATMAP_ROI_GT: true 
+  SAVE_HEATMAP_ROI_PRED: true 
+  SAVE_FOVEA_FINAL_GT: true
+  SAVE_FOVEA_FINAL_PRED: true 
+  SAVE_FOVEA_ROI_GT: true 
+  SAVE_FOVEA_ROI_INIT_PRED: true 
+  SAVE_FOVEA_ROI_FINAL_PRED: true 
