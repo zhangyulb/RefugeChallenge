@@ -18,7 +18,7 @@ Trained with the REFUGE 2018 train+val data, the best model achieves 7.5 pixels 
    ```
 4. Download pretrained models from Baidu Yun Drive: https://pan.baidu.com/s/1xucVbfCvkXSTu62b8NuN8Q (password: 6gpu), and put them into models/pretrained.
 
-5. Download the REFUGE data and uncompress them into the same directory, including the training, validation, and testing set. The folder structure should be like
+5. Download the REFUGE data and uncompress them into a single directory, including the training, validation, and testing set. The folder structure should be like
 ```
 ${DATA_ROOT}
 |-- REFUGE-Trainig
