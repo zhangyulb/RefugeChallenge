@@ -11,7 +11,7 @@ Trained with the REFUGE 2018 train+val data, the best model achieves 7.5 pixels 
    ```
    pip install -r requirements.txt
    ```
-3. Init output (training model output directory) and log (tensorboard log directory) directory:
+3. Initialize output (training model output directory) and log (tensorboard log directory) directory:
    ```
    mkdir output
    mkdir log
