@@ -7,7 +7,7 @@ Trained with the REFUGE 2018 train+val data, the best model achieves 7.5 pixels 
 ## Quick start
 ### Installation
 1. The code is developed under Python2.7 and Pytorch 0.4.0. Other versions of environment should work well, but have not been fully tested. Virtualenv is highly recommended for installation.
-2. Install dependenceis: 
+2. Install dependencies: 
    ```
    pip install -r requirements.txt
    ```
