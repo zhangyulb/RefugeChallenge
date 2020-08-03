@@ -49,7 +49,7 @@ python tools/test.py --cfg experiments/refuge.yaml ./models/pretrained/best_mode
 ```
 
 ### Training
-First ensure that the data root in experiments.refuge.yaml is set correctly. Note that the final performance may slightly differ from the pretrained model due to the randomness in the algorithm.
+First ensure that the data root in experiments/refuge.yaml is set correctly. Note that the final performance may slightly differ from the pretrained model due to the randomness in the algorithm.
 ```
 python tools/train.py --cfg experiments/refuge.yaml
 ```
