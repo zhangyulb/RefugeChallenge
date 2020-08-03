@@ -1,4 +1,4 @@
-# A Temporary Project for Coding Test
+# Coding Test
 
 The code structure is basically based on the official HRNet project (https://github.com/leoxiaobin/deep-high-resolution-net.pytorch), with plenty of modifications.
 
@@ -49,7 +49,7 @@ python tools/test.py --cfg experiments/refuge.yaml ./models/pretrained/best_mode
 ```
 
 ### Training
-First ensure that the data root in experiments.refuge.yaml is set correctly. Then
+First ensure that the data root in experiments.refuge.yaml is set correctly. Note that the final performance may slightly differ from the pretrained model due to the randomness in the algorithm.
 ```
 python tools/train.py --cfg experiments/refuge.yaml
 ```
