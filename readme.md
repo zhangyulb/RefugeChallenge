@@ -21,7 +21,7 @@ Trained with the REFUGE 2018 train+val data, the best model achieves 7.5 pixels 
 5. Download the REFUGE data and uncompress them into a single directory, including the training, validation, and testing set. The folder structure should be like
 ```
 ${DATA_ROOT}
-|-- REFUGE-Trainig
+|-- REFUGE-Training400
 `-- |--Training400
     `-- |-- Glaucoma
         |-- Non-Glaucoma
@@ -45,7 +45,7 @@ ${DATA_ROOT}
 ### Testing
 Testing the pretrained model:
 ```
-python tools/test.py --cfg experiments/refuge.yaml ./models/pretrained/best_model.pth
+python tools/test.py --cfg experiments/refuge.yaml TEST.MODEL_FILE ./models/pretrained/best_model.pth
 ```
 
 ### Training
