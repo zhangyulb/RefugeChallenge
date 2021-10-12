@@ -1,6 +1,6 @@
 cffi==1.11.5
 numpy==1.15.1
-opencv-python==3.4.3.18
+opencv-python==3.4.7.28
 openpyxl==2.6.4
 pathlib==1.0.1
 PyYAML==5.1
